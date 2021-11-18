@@ -6,13 +6,12 @@ Connect the display board as wiring bellow and install the i2c toold with comman
 
 ![oled12864](https://user-images.githubusercontent.com/5319910/142386739-ab7a71be-d3cb-4f05-b6d2-3daf197fcd00.jpg)
 
-then check the board with 
+Then check the board with "i2cdetect -l" you will see board as i2c-1 or i2c-0. Test with "sudo i2cdetect -y 0" (or 1). If your display has 3d address instead 3c, change OLED_I2C_ADDR parameter it in the oled.h. 
 
-i2cdetect -l
+![image](https://user-images.githubusercontent.com/5319910/142387020-eef8d5f0-6ca3-476b-8079-e41631011360.png)
 
-you will see board as i2c-1 or i2c-0
 
-Test with "sudo i2cdetect -y 0" (or 1). If your display has 3d address instead 3c, change OLED_I2C_ADDR parameter it in the oled.h. Enter "make" to compile and run demo with "sudo ./oled_demo /dev/i2c-0".
+Enter "make" to compile and run demo with "sudo ./oled_demo /dev/i2c-0".
 
 This library was written by Sonal Pinto for Arduino and ported to Linux by Vladimir Komendantskiy. Borombo in Arambian forum just wrote functions for text drawing and add three little fonts. This library only can  draw text at X Y with specified font and draw custom pixel, but it is easy to write line, circle, rectangle drawing functions.
 
